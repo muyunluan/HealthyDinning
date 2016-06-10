@@ -3,6 +3,7 @@ package com.healthyinc.healthydinningapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -321,7 +322,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     // Account exists, check if the password matches.
                     if(pieces[1].equals(mPassword)) {
                         // Login credentials are correct
-                        
+                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
                         return true;
                     }
                 }
