@@ -19,4 +19,19 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Strings related to Main Page -->
+    <string name="user_name">姓名</string>
+    <string name="daily_gain_calories">当日摄入卡路里</string>
+    <string name="nutrition_status">营养动态</string>
+    <string name="health_exam">健康检测</string>
+    <string name="health_report">健康报告</string>
+    <string name="total_exercise">运动量</string>
+    <string name="more_features">更多</string>
+    <string name="nutrition_gain">营养摄入量</string>
+    <string name="nutrition_benefit">营养惠</string>
+    <string name="customers_info">商家信息</string>
+
+
+
+
 </resources>
