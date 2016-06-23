@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
                     attemptLogin();
+                    navigateHome();
                     return true;
                 }
                 return false;
@@ -355,5 +356,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
     }
+
+    private void navigateHome() {
+        MainPageFragment frag = MainPageFragment.newInstance();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_camera, frag).commit();
+    }
+
 }
 
