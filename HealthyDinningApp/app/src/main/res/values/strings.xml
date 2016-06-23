@@ -3,7 +3,7 @@
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password (optional)</string>
+    <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="error_invalid_email">This email address is invalid</string>
@@ -31,7 +31,18 @@
     <string name="nutrition_benefit">营养惠</string>
     <string name="customers_info">商家信息</string>
 
-
-
+    <!-- Strings related to login -->
+    <string name="email_address">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="country">Country</string>
+    <string name="phone_country_code">Phone country code</string>
+    <string name="phone_number">Phone number</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zipcode">Zip</string>
+    <string name="action_sign_up">Sign up</string>
 
 </resources>
