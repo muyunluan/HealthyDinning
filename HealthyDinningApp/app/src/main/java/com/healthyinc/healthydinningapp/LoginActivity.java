@@ -63,6 +63,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mProgressView;
     private View mLoginFormView;
 
+    private static boolean testFlag = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -178,6 +180,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             focusView = mEmailView;
             cancel = true;
         }
+
+        if (testFlag) cancel = false;
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
@@ -319,19 +323,30 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, check if the password matches.
-                    if(pieces[1].equals(mPassword)) {
-                        // Login credentials are correct
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
-                        ((Activity)mContext).finish();
-                        return true;
+
+            if (!testFlag) {
+                for (String credential : DUMMY_CREDENTIALS) {
+                    String[] pieces = credential.split(":");
+                    if (pieces[0].equals(mEmail)) {
+                        // Account exists, check if the password matches.
+                        if(pieces[1].equals(mPassword)) {
+                            // Login credentials are correct
+                            Intent intent = new Intent(mContext, MainActivity.class);
+                            startActivity(intent);
+                            ((Activity)mContext).finish();
+                            return true;
+                        }
                     }
                 }
             }
+            else {
+                // Login credentials are correct
+                Intent intent = new Intent(mContext, MainActivity.class);
+                startActivity(intent);
+                ((Activity)mContext).finish();
+                return true;
+            }
+
 
             // TODO: register the new account here.
             return true;
@@ -359,7 +374,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private void navigateHome() {
         MainPageFragment frag = MainPageFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_camera, frag).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_main, frag).commit();
     }
 
 }

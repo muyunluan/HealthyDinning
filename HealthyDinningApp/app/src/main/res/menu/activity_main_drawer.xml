@@ -3,21 +3,21 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_main"
             android:icon="@drawable/ic_menu_camera"
-            android:title="主界面" />
+            android:title="@string/navigation_main_page" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_discover"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="@string/navigation_discover" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_service"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="@string/navigation_service" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/ic_menu_manage"
-            android:title="用户设置" />
+            android:title="@string/navigation_user_profile" />
     </group>
 
     <item android:title="Communicate">
@@ -25,11 +25,11 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="分享" />
+                android:title="@string/navigation_share" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_forward"
                 android:icon="@drawable/ic_menu_send"
-                android:title="转发" />
+                android:title="@string/navigation_forward" />
         </menu>
     </item>
 
