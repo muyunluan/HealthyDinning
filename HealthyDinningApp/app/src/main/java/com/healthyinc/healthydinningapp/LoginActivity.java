@@ -33,6 +33,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
@@ -91,9 +93,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
+                navigateHome();
             }
         });
 
+        TextView mCreateUser = (TextView) findViewById(R.id.link_signup);
+        mCreateUser.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchToSignUp();
+            }
+        });
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -194,6 +204,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = new UserLoginTask(this, email, password);
             mAuthTask.execute((Void) null);
         }
+    }
+
+
+    private void switchToSignUp() {
+        // Start the Signup activity
+        Intent intent = new Intent(getApplicationContext(), SignupActivity.class);
+        startActivityForResult(intent, 0);
     }
 
     private boolean isEmailValid(String email) {
