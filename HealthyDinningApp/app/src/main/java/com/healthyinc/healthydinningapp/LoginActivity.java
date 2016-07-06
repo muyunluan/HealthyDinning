@@ -390,8 +390,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private void navigateHome() {
-        MainPageFragment frag = MainPageFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_main, frag).commit();
+//        MainPageFragment frag = MainPageFragment.newInstance();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_main, frag).commit();
+
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
 }
