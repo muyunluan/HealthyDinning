@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Test">
-        <item
-            android:id="@+id/nav_main"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/navigation_main_page" />
-        <item
-            android:id="@+id/nav_discover"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/navigation_discover" />
-        <item
-            android:id="@+id/nav_service"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/navigation_service" />
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/navigation_user_profile" />
+    <item android:title="HealthyInc">
+        <menu>
+            <item
+                android:id="@+id/nav_main"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/navigation_main_page" />
+            <item
+                android:id="@+id/nav_discover"
+                android:icon="@drawable/ic_menu_gallery"
+                android:title="@string/navigation_discover" />
+            <item
+                android:id="@+id/nav_service"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="@string/navigation_service" />
+        </menu>
     </item>
 
     <item android:title="Communicate">
         <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/navigation_user_profile" />
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
