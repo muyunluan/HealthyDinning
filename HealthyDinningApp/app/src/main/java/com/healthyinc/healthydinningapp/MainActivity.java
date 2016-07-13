@@ -12,8 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.healthyinc.healthydinningapp.fragment.AccountDetailFragment;
 import com.healthyinc.healthydinningapp.fragment.MainPageFragment;
-import com.healthyinc.healthydinningapp.fragment.UserProfileFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        MainPageFragment frag = MainPageFragment.newInstance();
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_main, frag).commit();
+//        MainPageFragment frag = MainPageFragment.newInstance();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.nav_main, frag).commit();
     }
 
     @Override
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_service) {
 
         } else if (id == R.id.nav_profile) {
-            fragment = UserProfileFragment.newInstance();
+            fragment = AccountDetailFragment.newInstance();
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_forward) {

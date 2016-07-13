@@ -45,8 +45,8 @@ public class AccountDetailFragment extends Fragment {
         mView = inflater.inflate(R.layout.fragment_account_detail, container, false);
         mContext = mView.getContext();
 
+        mListView = (MaterialListView)mView.findViewById(R.id.material_listview);
         mListView.getAdapter().add(generateUserInfoCard("user"));
-
 
         // Set the dismiss listener
         mListView.setOnDismissCallback(new OnDismissCallback() {
@@ -65,7 +65,7 @@ public class AccountDetailFragment extends Fragment {
             public void onItemClick(@NonNull Card card, int position) {
                 Log.d("CARD_TYPE", "" + card.getTag());
                 if (card.getTag().toString().equals(Constants.USER_INFORMATION_CARD_TAG)) {
-                    mClass = null;
+                    mClass = UserProfileFragment.class;
                 }
 
                 Intent mIntent = new Intent(mContext, mClass);

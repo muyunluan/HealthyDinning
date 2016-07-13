@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">HealthyDinningApp</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to login activity -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -38,7 +38,8 @@
     <string name="nutrition_benefit">营养惠</string>
     <string name="customers_info">商家信息</string>
 
-    <!-- Strings related to login -->
+    <!-- Strings related to user information -->
+    <string name="profile_photo">Profile Photo</string>
     <string name="email_address">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm Password</string>
@@ -51,5 +52,9 @@
     <string name="state">State</string>
     <string name="zipcode">Zip</string>
     <string name="action_sign_up">Sign up</string>
+    <string name="height">身高</string>
+    <string name="weight">体重</string>
+    <string name="sex">性别</string>
+    <string name="confirm">确定</string>
 
 </resources>

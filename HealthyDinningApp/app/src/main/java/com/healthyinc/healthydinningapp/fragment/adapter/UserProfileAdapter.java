@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.healthyinc.healthydinningapp.R;
+import com.healthyinc.healthydinningapp.util.UserProfile;
+
 
 /**
  * Created by Fei Deng on 7/12/16.
@@ -20,7 +22,7 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private Context mContext;
     View.OnClickListener mClickListener;
 
-    public UserProfileAdapter(View.OnClickListener listener) {
+    public UserProfileAdapter(UserProfile userProfile, View.OnClickListener listener) {
         mClickListener = listener;
     }
 
@@ -52,7 +54,6 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
             mEditText = (EditText)itemView.findViewById(R.id.edit_text);
             mEditText.setClickable(true);
-            mEditText.setOnClickListener(this);
         }
 
         @Override
