@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.healthyinc.healthydinningapp.UserProfileFragment">
+    tools:context=".fragment.UserProfileFragment">
 
 
     <android.support.v4.widget.NestedScrollViewScrollView
@@ -14,11 +14,6 @@
         android:id="@+id/scrollView"
         android:layout_weight="1"
         android:layout_gravity="center_horizontal">
-
-        <android.support.v4.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
 
             <LinearLayout
@@ -277,13 +272,6 @@
                         android:inputType="textCapWords" />
                 </LinearLayout>
             </LinearLayout>
-        </android.support.v4.widget.NestedScrollView>
-
-        <Button
-            android:id="@+id/account_details_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/action_sign_up" />
 
     </android.support.v4.widget.NestedScrollViewScrollView>
 </LinearLayout>

@@ -12,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.healthyinc.healthydinningapp.fragment.MainPageFragment;
+import com.healthyinc.healthydinningapp.fragment.UserProfileFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
