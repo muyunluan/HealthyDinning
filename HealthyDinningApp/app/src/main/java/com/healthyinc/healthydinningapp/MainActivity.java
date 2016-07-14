@@ -12,16 +12,29 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.healthyinc.healthydinningapp.fragment.AccountDetailFragment;
+import com.healthyinc.healthydinningapp.fragment.account.AccountDetailFragment;
+import com.healthyinc.healthydinningapp.fragment.DiscoverFragment;
+import com.healthyinc.healthydinningapp.fragment.ForwardFragment;
 import com.healthyinc.healthydinningapp.fragment.MainPageFragment;
+import com.healthyinc.healthydinningapp.fragment.ServiceFragment;
+import com.healthyinc.healthydinningapp.fragment.ShareFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private static MainActivity mActivityInstance;
+
+    public static MainActivity getInstance() {
+        return mActivityInstance;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mActivityInstance = this;
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //
@@ -90,15 +103,15 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_main) {
             fragment = MainPageFragment.newInstance();
         } else if (id == R.id.nav_discover) {
-
+            fragment = DiscoverFragment.newInstance();
         } else if (id == R.id.nav_service) {
-
+            fragment = ServiceFragment.newInstance();
         } else if (id == R.id.nav_profile) {
             fragment = AccountDetailFragment.newInstance();
         } else if (id == R.id.nav_share) {
-
+            fragment = ShareFragment.newInstance();
         } else if (id == R.id.nav_forward) {
-
+            fragment = ForwardFragment.newInstance();
         }
 
         // Insert the fragment by replacing any existing fragment
@@ -108,5 +121,11 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void pushFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        }
     }
 }

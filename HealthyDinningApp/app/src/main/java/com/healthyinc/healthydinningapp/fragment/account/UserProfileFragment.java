@@ -1,4 +1,4 @@
-package com.healthyinc.healthydinningapp.fragment;
+package com.healthyinc.healthydinningapp.fragment.account;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -43,7 +43,7 @@ public class UserProfileFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_user_profile_new, container, false);
+        mView = inflater.inflate(R.layout.fragment_user_profile, container, false);
         mContext = mView.getContext();
 
         mUserName = (EditText)mView.findViewById(R.id.et_user_name);

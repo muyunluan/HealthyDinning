@@ -1,24 +1,27 @@
-package com.healthyinc.healthydinningapp.fragment;
+package com.healthyinc.healthydinningapp.fragment.account;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.dexafree.materialList.card.Card;
 import com.dexafree.materialList.card.CardProvider;
+import com.dexafree.materialList.card.provider.ListCardProvider;
 import com.dexafree.materialList.listeners.OnDismissCallback;
 import com.dexafree.materialList.listeners.RecyclerItemClickListener;
 import com.dexafree.materialList.view.MaterialListView;
+import com.healthyinc.healthydinningapp.MainActivity;
 import com.healthyinc.healthydinningapp.R;
 import com.healthyinc.healthydinningapp.util.Constants;
+import com.squareup.picasso.RequestCreator;
 
 /**
  * Created by Fei Deng on 7/12/16.
@@ -59,17 +62,30 @@ public class AccountDetailFragment extends Fragment {
 
         // Add the ItemTouchListener
         mListView.addOnItemTouchListener(new RecyclerItemClickListener.OnItemClickListener() {
-            Class mClass;
-
             @Override
             public void onItemClick(@NonNull Card card, int position) {
                 Log.d("CARD_TYPE", "" + card.getTag());
-                if (card.getTag().toString().equals(Constants.USER_INFORMATION_CARD_TAG)) {
-                    mClass = UserProfileFragment.class;
+                String cardTag = card.getTag().toString();
+                if (cardTag.isEmpty()) {
+                    //null value
                 }
+                else {
+                    if (cardTag.equals(Constants.USER_INFORMATION_CARD_TAG)) {
+                        MainActivity.getInstance().pushFragment(UserProfileFragment.newInstance());
+                    }
+                    else if (cardTag.equals(Constants.USER_BASIC_DATA_CARD_TAG)) {
 
-                Intent mIntent = new Intent(mContext, mClass);
-                mContext.startActivity(mIntent);
+                    }
+                    else if (cardTag.equals(Constants.USER_DIET_DATA_CARD_TAG)) {
+
+                    }
+                    else if (cardTag.equals(Constants.USER_FAMILIAL_DISEASE_CARD_TAG)) {
+
+                    }
+                    else if (cardTag.equals(Constants.USER_BODY_DATA_CARD_TAG)) {
+
+                    }
+                }
             }
 
             @Override
@@ -86,14 +102,28 @@ public class AccountDetailFragment extends Fragment {
                 .setTag(Constants.USER_INFORMATION_CARD_TAG)
                 .setDismissible()
                 .withProvider(new CardProvider())
-                .setLayout(R.layout.cardview_single_textview)
-                .setTitle("Welcome to HealthyInc")
-                .setTitleColor(Color.WHITE)
+                .setLayout(R.layout.material_basic_image_buttons_card_layout)
+                .setTitleGravity(Gravity.END)
                 .setDescription(content)
-                .setDescriptionColor(Color.WHITE)
-                .setSubtitle(R.string.user_name)
-                .setSubtitleColor(Color.WHITE)
-                .setBackgroundColor(Color.BLUE);
+                .setDescriptionGravity(Gravity.END)
+                .setDrawable(R.drawable.dog)
+                .setDrawableConfiguration(new CardProvider.OnImageConfigListener() {
+                    @Override
+                    public void onImageConfigure(@NonNull RequestCreator requestCreator) {
+                        requestCreator.fit();
+                    }
+                });
         return provider.endConfig().build();
+    }
+
+    public Card generateUserBasicDataCard(ArrayAdapter<String> dataAdapter) {
+        return new Card.Builder(mContext)
+                .setTag(Constants.USER_BASIC_DATA_CARD_TAG)
+                .setDismissible()
+                .withProvider(new ListCardProvider())
+                .setLayout(R.layout.material_list_card_layout)
+                .setAdapter(dataAdapter)
+                .endConfig()
+                .build();
     }
 }

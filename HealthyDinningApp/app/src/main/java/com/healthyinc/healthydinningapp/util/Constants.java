@@ -6,6 +6,10 @@ package com.healthyinc.healthydinningapp.util;
  */
 public class Constants {
 
-    public static final String USER_INFORMATION_CARD_TAG = "User Information Card";
+    public static final String USER_INFORMATION_CARD_TAG = "Personal Information Card";
+    public static final String USER_BASIC_DATA_CARD_TAG = "Personal Basic Data";
+    public static final String USER_DIET_DATA_CARD_TAG = "Personal Diet Data";
+    public static final String USER_FAMILIAL_DISEASE_CARD_TAG = "Familial Disease Data";
+    public static final String USER_BODY_DATA_CARD_TAG = "Personal Body Data";
 
 }

@@ -1,4 +1,4 @@
-package com.healthyinc.healthydinningapp.fragment;
+package com.healthyinc.healthydinningapp.fragment.account;
 
 import android.content.Context;
 import android.support.v4.app.Fragment;
