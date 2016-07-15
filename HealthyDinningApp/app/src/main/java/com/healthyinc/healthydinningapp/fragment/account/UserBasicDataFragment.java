@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.healthyinc.healthydinningapp.R;
 
@@ -17,6 +19,19 @@ public class UserBasicDataFragment extends Fragment {
 
     private View mView;
     private Context mContext;
+
+    private EditText mUserName;
+    private EditText mUserHeight;
+    private EditText mUserWeight;
+    private EditText mUserSex;
+    private EditText mCountry;
+    private EditText mPhoneCountryCode;
+    private EditText mPhoneNumber;
+    private EditText mCity;
+    private EditText mState;
+    private EditText mZip;
+
+    private Button mUpdate;
 
     public UserBasicDataFragment() {}
 
@@ -31,11 +46,32 @@ public class UserBasicDataFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.cardview_user_basic_data, container, false);
+        mView = inflater.inflate(R.layout.fragment_user_profile, container, false);
         mContext = mView.getContext();
 
+        mUserName = (EditText)mView.findViewById(R.id.et_user_name);
+        mUserHeight = (EditText)mView.findViewById(R.id.et_user_height);
+        mUserWeight = (EditText)mView.findViewById(R.id.et_user_weight);
+        mUserSex = (EditText)mView.findViewById(R.id.et_user_sex);
+        mCountry = (EditText)mView.findViewById(R.id.et_country);
+        mPhoneCountryCode = (EditText)mView.findViewById(R.id.et_phone_country_code);
+        mPhoneNumber = (EditText)mView.findViewById(R.id.et_phone_number);
+        mCity = (EditText)mView.findViewById(R.id.et_city);
+        mState = (EditText)mView.findViewById(R.id.et_state);
+        mZip = (EditText)mView.findViewById(R.id.et_zipcode);
 
+        mUpdate = (Button)mView.findViewById(R.id.bt_confirm);
+        mUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUserProfile();
+            }
+        });
         return mView;
+    }
+
+    private void updateUserProfile() {
+
     }
 
 }

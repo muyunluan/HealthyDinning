@@ -58,5 +58,6 @@
     <string name="confirm">确定</string>
 
     <string name="user_basic_data">个人基础数据</string>
+    <string name="age">年龄</string>
 
 </resources>

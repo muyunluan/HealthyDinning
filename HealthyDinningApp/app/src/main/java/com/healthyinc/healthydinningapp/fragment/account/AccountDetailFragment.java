@@ -49,7 +49,11 @@ public class AccountDetailFragment extends Fragment {
         mContext = mView.getContext();
 
         mListView = (MaterialListView)mView.findViewById(R.id.material_listview);
-        mListView.getAdapter().add(generateUserInfoCard("user"));
+        mListView.getAdapter().add(generateUserInfoCard("user info"));
+        mListView.getAdapter().add(generateUserBasicDataCard("user basic"));
+        mListView.getAdapter().add(generateUserDietDataCard("user diet"));
+        mListView.getAdapter().add(generateFamilialDiseaseCard("familial disease"));
+        mListView.getAdapter().add(generateUserBodyDataCard("user body"));
 
         // Set the dismiss listener
         mListView.setOnDismissCallback(new OnDismissCallback() {
@@ -74,16 +78,16 @@ public class AccountDetailFragment extends Fragment {
                         MainActivity.getInstance().pushFragment(UserProfileFragment.newInstance());
                     }
                     else if (cardTag.equals(Constants.USER_BASIC_DATA_CARD_TAG)) {
-
+                        MainActivity.getInstance().pushFragment(UserBasicDataFragment.newInstance());
                     }
                     else if (cardTag.equals(Constants.USER_DIET_DATA_CARD_TAG)) {
-
+                        MainActivity.getInstance().pushFragment(UserDietDataFragment.newInstance());
                     }
                     else if (cardTag.equals(Constants.USER_FAMILIAL_DISEASE_CARD_TAG)) {
-
+                        MainActivity.getInstance().pushFragment(UserFamiliarDiseaseFragment.newInstance());
                     }
                     else if (cardTag.equals(Constants.USER_BODY_DATA_CARD_TAG)) {
-
+                        MainActivity.getInstance().pushFragment(UserBodyDataFragment.newInstance());
                     }
                 }
             }
@@ -96,6 +100,7 @@ public class AccountDetailFragment extends Fragment {
 
         return mView;
     }
+
 
     public Card generateUserInfoCard(String content) {
         final CardProvider provider = new Card.Builder(mContext)
@@ -116,14 +121,49 @@ public class AccountDetailFragment extends Fragment {
         return provider.endConfig().build();
     }
 
-    public Card generateUserBasicDataCard(ArrayAdapter<String> dataAdapter) {
-        return new Card.Builder(mContext)
+    public Card generateUserBasicDataCard(String content) {
+        final CardProvider provider = new Card.Builder(mContext)
                 .setTag(Constants.USER_BASIC_DATA_CARD_TAG)
+                .setDismissible()
+                .withProvider(new CardProvider())
+                .setLayout(R.layout.cardview_user_basic_data)
+                .setDescription(content);
+        return provider.endConfig().build();
+    }
+
+    public Card generateUserDietDataCard(String content) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(mContext, android.R.layout.simple_list_item_1);
+        adapter.add("挑食情况：");
+        adapter.add("过敏食物：");
+        adapter.add("喜好食物：");
+
+        final ListCardProvider provider = new Card.Builder(mContext)
+                .setTag(Constants.USER_DIET_DATA_CARD_TAG)
                 .setDismissible()
                 .withProvider(new ListCardProvider())
                 .setLayout(R.layout.material_list_card_layout)
-                .setAdapter(dataAdapter)
-                .endConfig()
-                .build();
+                .setTitle("个人饮食习惯")
+                .setAdapter(adapter);
+        return provider.endConfig().build();
+    }
+
+    private Card generateFamilialDiseaseCard(String content) {
+        final CardProvider provider = new Card.Builder(mContext)
+                .setTag(Constants.USER_FAMILIAL_DISEASE_CARD_TAG)
+                .setDismissible()
+                .withProvider(new CardProvider())
+                .setLayout(R.layout.cardview_single_textview)
+                .setDescription(content);
+        return provider.endConfig().build();
+    }
+
+    private Card generateUserBodyDataCard(String content) {
+        final CardProvider provider = new Card.Builder(mContext)
+                .setTag(Constants.USER_BODY_DATA_CARD_TAG)
+                .setDismissible()
+                .withProvider(new CardProvider())
+                .setLayout(R.layout.cardview_single_textview)
+                .setDescription(content);
+        return provider.endConfig().build();
     }
 }
