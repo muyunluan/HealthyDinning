@@ -74,6 +74,7 @@ public class MainPageFragment extends Fragment {
     private List<Card> generateCards() {
         List<Card> cards = new ArrayList<>();
         cards.add(generateUserInfoCard("test"));
+        cards.add(geneerateBasicFeaturesCard("test"));
         cards.add(generateCustomerCard("test customer"));
         return cards;
     }
@@ -93,6 +94,17 @@ public class MainPageFragment extends Fragment {
                 .setBackgroundColor(Color.BLUE);
         return provider.endConfig().build();
     }
+
+
+    private Card geneerateBasicFeaturesCard(String content) {
+        final CardProvider provider = new Card.Builder(mContext)
+                .setTag("BASIC_FEATURES_CARD")
+                .setDismissible()
+                .withProvider(new CardProvider())
+                .setLayout(R.layout.cardview_basic_features);
+        return provider.endConfig().build();
+    }
+
 
     private Card generateCustomerCard(String content) {
         return new Card.Builder(mContext)

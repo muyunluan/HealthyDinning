@@ -49,11 +49,11 @@ public class AccountDetailFragment extends Fragment {
         mContext = mView.getContext();
 
         mListView = (MaterialListView)mView.findViewById(R.id.material_listview);
-        mListView.getAdapter().add(generateUserInfoCard("user info"));
+        mListView.getAdapter().add(generateUserInfoCard(mContext.getResources().getString(R.string.user_name)));
         mListView.getAdapter().add(generateUserBasicDataCard("user basic"));
         mListView.getAdapter().add(generateUserDietDataCard("user diet"));
-        mListView.getAdapter().add(generateFamilialDiseaseCard("familial disease"));
-        mListView.getAdapter().add(generateUserBodyDataCard("user body"));
+        mListView.getAdapter().add(generateFamilialDiseaseCard(mContext.getResources().getString(R.string.user_familial_disease)));
+        mListView.getAdapter().add(generateUserBodyDataCard(mContext.getResources().getString(R.string.user_body_data)));
 
         // Set the dismiss listener
         mListView.setOnDismissCallback(new OnDismissCallback() {
@@ -152,7 +152,7 @@ public class AccountDetailFragment extends Fragment {
                 .setTag(Constants.USER_FAMILIAL_DISEASE_CARD_TAG)
                 .setDismissible()
                 .withProvider(new CardProvider())
-                .setLayout(R.layout.cardview_single_textview)
+                .setLayout(R.layout.cardview_user_familial_disease)
                 .setDescription(content);
         return provider.endConfig().build();
     }
@@ -162,7 +162,7 @@ public class AccountDetailFragment extends Fragment {
                 .setTag(Constants.USER_BODY_DATA_CARD_TAG)
                 .setDismissible()
                 .withProvider(new CardProvider())
-                .setLayout(R.layout.cardview_single_textview)
+                .setLayout(R.layout.cardview_user_body_data)
                 .setDescription(content);
         return provider.endConfig().build();
     }

@@ -57,7 +57,9 @@
     <string name="sex">性别</string>
     <string name="confirm">确定</string>
 
+
     <string name="user_basic_data">个人基础数据</string>
     <string name="age">年龄</string>
-
+    <string name="user_familial_disease">家庭病史</string>
+    <string name="user_body_data">个人身体活动数据</string>
 </resources>
