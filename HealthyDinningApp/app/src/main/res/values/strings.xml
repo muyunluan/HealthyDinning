@@ -56,6 +56,7 @@
     <string name="weight">体重</string>
     <string name="sex">性别</string>
     <string name="confirm">确定</string>
+    <string name="bmi">体脂</string>
 
 
     <string name="user_basic_data">个人基础数据</string>

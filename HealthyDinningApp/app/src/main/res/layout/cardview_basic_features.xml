@@ -19,32 +19,34 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/linearlayout">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/linearlayout">
                 <TextView
                     android:id="@+id/tv_nutrition_status"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/nutrition_status"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/nutrition_status"/>
                 <TextView
                     android:id="@+id/tv_health_exam"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/health_exam"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/health_exam"/>
                 <TextView
                     android:id="@+id/tv_health_report"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/health_report"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/health_report"/>
                 <TextView
                     android:id="@+id/tv_total_exercise"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/total_exercise"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/total_exercise"/>
                 <TextView
                     android:id="@+id/tv_more_features"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/more_features"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/more_features"/>
 
             </LinearLayout>
 
@@ -52,15 +54,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:background="@drawable/linearlayout">
                 <TextView
                     android:id="@+id/tv_nutrition_gain"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="@string/nutrition_gain"/>
+                    style="@style/Material_Action"
+                    tools:text="@string/nutrition_gain"/>
                 <TextView
                     android:id="@+id/tv_unkown"
-                    style="@style/UserProfileTextViewTheme"
-                    android:text="unkown"/>
+                    style="@style/Material_Action"
+                    tools:text="unkown"/>
 
                 </LinearLayout>
 

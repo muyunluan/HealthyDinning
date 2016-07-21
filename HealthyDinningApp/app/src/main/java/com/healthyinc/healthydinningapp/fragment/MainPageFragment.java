@@ -13,10 +13,14 @@ import android.widget.Toast;
 
 import com.dexafree.materialList.card.Card;
 import com.dexafree.materialList.card.CardProvider;
+import com.dexafree.materialList.card.OnActionClickListener;
+import com.dexafree.materialList.card.action.TextViewAction;
 import com.dexafree.materialList.listeners.OnDismissCallback;
 import com.dexafree.materialList.listeners.RecyclerItemClickListener;
 import com.dexafree.materialList.view.MaterialListView;
+import com.healthyinc.healthydinningapp.MainActivity;
 import com.healthyinc.healthydinningapp.R;
+import com.healthyinc.healthydinningapp.fragment.features.HealthDetectionFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,7 +86,6 @@ public class MainPageFragment extends Fragment {
     private Card generateUserInfoCard(String content) {
         final CardProvider provider = new Card.Builder(mContext)
                 .setTag("WELCOME_CARD")
-                .setDismissible()
                 .withProvider(new CardProvider())
                 .setLayout(R.layout.material_welcome_card_layout)
                 .setTitle("Welcome to HealthyInc")
@@ -99,9 +102,71 @@ public class MainPageFragment extends Fragment {
     private Card geneerateBasicFeaturesCard(String content) {
         final CardProvider provider = new Card.Builder(mContext)
                 .setTag("BASIC_FEATURES_CARD")
-                .setDismissible()
                 .withProvider(new CardProvider())
-                .setLayout(R.layout.cardview_basic_features);
+                .setLayout(R.layout.cardview_basic_features)
+                .addAction(R.id.tv_nutrition_status, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.nutrition_status))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_health_exam, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.health_exam))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_health_report, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.health_report))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_total_exercise, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.total_exercise))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_more_features, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.more_features))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_nutrition_gain, new TextViewAction(mContext)
+                        .setText(mContext.getResources().getString(R.string.nutrition_gain))
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }))
+                .addAction(R.id.tv_unkown, new TextViewAction(mContext)
+                        .setText("UNKNOWN")
+                        .setTextResourceColor(R.color.black_button)
+                        .setListener(new OnActionClickListener() {
+                            @Override
+                            public void onActionClicked(View view, Card card) {
+                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                            }
+                        }));
         return provider.endConfig().build();
     }
 
@@ -113,7 +178,7 @@ public class MainPageFragment extends Fragment {
                 .setLayout(R.layout.material_basic_image_buttons_card_layout)
                 .setTitle(R.string.customers_info)
                 .setDescription(content)
-//                .setDrawable(R.drawable.dog)
+                .setDrawable(R.drawable.dog)
                 .endConfig()
                 .build();
     }
