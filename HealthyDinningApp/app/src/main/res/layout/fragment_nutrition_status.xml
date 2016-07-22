@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:overScrollMode="never"
+    android:scrollbars="none">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/nutrition_status"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:paddingLeft="0dp"
+                    android:gravity="center"
+                    android:text="摄入总能量："/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:hint="kml"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="参考量："/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="0dp"
+                    android:hint="kml"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="0dp"
+                android:text="占个人每日参考摄入量的————%"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="各种营养惠详情" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/Green"
+                    android:text="早" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/Blue"
+                    android:text="中" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/Red"
+                    android:text="晚" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="蛋白质"/>
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_green_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_blue_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_red_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="脂肪"/>
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_green_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_blue_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+                <com.akexorcist.roundcornerprogressbar.TextRoundCornerProgressBar
+                    android:layout_width="250dp"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    app:rcBackgroundColor="@color/custom_progress_background"
+                    app:rcBackgroundPadding="10dp"
+                    app:rcMax="80"
+                    app:rcProgress="50"
+                    app:rcProgressColor="@color/custom_progress_red_progress"
+                    app:rcRadius="30dp"
+                    app:rcTextProgress="80%"
+                    app:rcTextProgressColor="@color/text"
+                    app:rcTextProgressMargin="10dp"
+                    app:rcTextProgressSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="碳水化合物"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="常量元素"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/background_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="微量元素"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

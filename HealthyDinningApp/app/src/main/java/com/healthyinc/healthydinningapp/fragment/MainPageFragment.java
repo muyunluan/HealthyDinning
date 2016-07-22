@@ -21,6 +21,11 @@ import com.dexafree.materialList.view.MaterialListView;
 import com.healthyinc.healthydinningapp.MainActivity;
 import com.healthyinc.healthydinningapp.R;
 import com.healthyinc.healthydinningapp.fragment.features.HealthDetectionFragment;
+import com.healthyinc.healthydinningapp.fragment.features.HealthReportFragment;
+import com.healthyinc.healthydinningapp.fragment.features.MoreFeatureFragment;
+import com.healthyinc.healthydinningapp.fragment.features.NutritionGainFragment;
+import com.healthyinc.healthydinningapp.fragment.features.NutritionStatusFragment;
+import com.healthyinc.healthydinningapp.fragment.features.TotalExerciseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +80,12 @@ public class MainPageFragment extends Fragment {
         return mView;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        generateCards();
+    }
+
     private List<Card> generateCards() {
         List<Card> cards = new ArrayList<>();
         cards.add(generateUserInfoCard("test"));
@@ -110,7 +121,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                MainActivity.getInstance().pushFragment(NutritionStatusFragment.newInstance());
                             }
                         }))
                 .addAction(R.id.tv_health_exam, new TextViewAction(mContext)
@@ -128,7 +139,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                MainActivity.getInstance().pushFragment(HealthReportFragment.newInstance());
                             }
                         }))
                 .addAction(R.id.tv_total_exercise, new TextViewAction(mContext)
@@ -137,7 +148,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                MainActivity.getInstance().pushFragment(TotalExerciseFragment.newInstance());
                             }
                         }))
                 .addAction(R.id.tv_more_features, new TextViewAction(mContext)
@@ -146,7 +157,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                MainActivity.getInstance().pushFragment(MoreFeatureFragment.newInstance());
                             }
                         }))
                 .addAction(R.id.tv_nutrition_gain, new TextViewAction(mContext)
@@ -155,7 +166,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                MainActivity.getInstance().pushFragment(NutritionGainFragment.newInstance());
                             }
                         }))
                 .addAction(R.id.tv_unkown, new TextViewAction(mContext)
@@ -164,7 +175,7 @@ public class MainPageFragment extends Fragment {
                         .setListener(new OnActionClickListener() {
                             @Override
                             public void onActionClicked(View view, Card card) {
-                                MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
+                                //MainActivity.getInstance().pushFragment(HealthDetectionFragment.newInstance());
                             }
                         }));
         return provider.endConfig().build();
