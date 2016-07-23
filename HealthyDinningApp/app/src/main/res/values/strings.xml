@@ -63,4 +63,8 @@
     <string name="age">年龄</string>
     <string name="user_familial_disease">家庭病史</string>
     <string name="user_body_data">个人身体活动数据</string>
+
+    <string name="decrease"><![CDATA[<]]></string>
+    <string name="increase"><![CDATA[>]]></string>
+    <string name="zero">0</string>
 </resources>

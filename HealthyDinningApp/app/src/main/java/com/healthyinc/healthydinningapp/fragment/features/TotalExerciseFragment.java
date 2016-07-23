@@ -27,7 +27,7 @@ public class TotalExerciseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mView = inflater.inflate(R.layout.fragment_main_page, container, false);
+        mView = inflater.inflate(R.layout.fragment_total_exercise, container, false);
         mContext = mView.getContext();
 
         return mView;
